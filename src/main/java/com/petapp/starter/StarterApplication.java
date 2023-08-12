@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author ivan.graciarena.
- * @project starter.
+ * @author ivan.graciarena
+ * @project starter
  */
 @SpringBootApplication
 public class StarterApplication {
