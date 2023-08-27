@@ -1,4 +1,5 @@
 FROM openjdk:11
+RUN apt-get update && apt-get install -y maven
 WORKDIR /pet-app
 VOLUME /pet-app/tmp
 COPY ./pom.xml .
