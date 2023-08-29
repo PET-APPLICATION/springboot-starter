@@ -4,6 +4,7 @@ import com.petapp.starter.dao.UserRepository;
 import com.petapp.starter.dto.UserCreateRequest;
 import com.petapp.starter.dto.UserCreateResponse;
 import com.petapp.starter.mapper.UserMapper;
+import org.springframework.stereotype.Service;
 
 /**
  * @author ivan.graciarena
