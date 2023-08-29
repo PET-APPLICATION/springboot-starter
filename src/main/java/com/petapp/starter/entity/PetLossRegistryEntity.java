@@ -46,7 +46,6 @@ public class PetLossRegistryEntity {
 
     @CreatedDate
     private Instant createdDate;
-
     @LastModifiedDate
     private Instant modifiedDate;
     private boolean isDeleted;
