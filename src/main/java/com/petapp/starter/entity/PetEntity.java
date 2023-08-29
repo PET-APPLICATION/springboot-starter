@@ -2,6 +2,9 @@ package com.petapp.starter.entity;
 
 import lombok.*;
 import org.hibernate.annotations.Cascade;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -18,13 +21,14 @@ import static org.hibernate.annotations.CascadeType.MERGE;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "pet")
+@EntityListeners(AuditingEntityListener.class)
+@Table(name = "pets")
 public class PetEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    Double id;
+    Long id;
 
     String petName;
     Integer age;
@@ -39,7 +43,9 @@ public class PetEntity {
     @Column(name = "user_id", insertable = false, updatable = false)
     private Integer userId;
 
+    @CreatedDate
     private Instant createdDate;
+    @LastModifiedDate
     private Instant modifiedDate;
     private boolean isDeleted;
     @Builder.Default

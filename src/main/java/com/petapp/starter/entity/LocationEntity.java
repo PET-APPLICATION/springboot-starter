@@ -1,6 +1,9 @@
 package com.petapp.starter.entity;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -15,16 +18,20 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "location")
+@EntityListeners(AuditingEntityListener.class)
+@Table(name = "locations")
 public class LocationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    Double id;
+    Long id;
     String latitude;
     String longitude;
 
+
+    @CreatedDate
     private Instant createdDate;
+    @LastModifiedDate
     private Instant modifiedDate;
     private boolean isDeleted;
     @Builder.Default

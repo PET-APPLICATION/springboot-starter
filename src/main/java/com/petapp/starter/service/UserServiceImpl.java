@@ -9,9 +9,12 @@ import com.petapp.starter.mapper.UserMapper;
  * @author ivan.graciarena
  * @project spring-boot-starter
  */
+
+@Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper = UserMapper.INSTANCE;
 
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -19,8 +22,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserCreateResponse addUser(UserCreateRequest userCreateRequest) {
-        var userEntityToBeSaved = UserMapper.INSTANCE.map(userCreateRequest);
+        var userEntityToBeSaved = userMapper.map(userCreateRequest);
         userRepository.save(userEntityToBeSaved);
-        return UserMapper.INSTANCE.map(userEntityToBeSaved);
+        return userMapper.map(userEntityToBeSaved);
     }
 }
