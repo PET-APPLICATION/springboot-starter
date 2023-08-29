@@ -9,6 +9,6 @@ import java.util.Optional;
  * @author ivan.graciarena
  * @project spring-boot-starter
  */
-public interface UserRepository extends JpaRepository<UserEntity, Double> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
     Optional<UserEntity> findByEmail(String email);
 }
