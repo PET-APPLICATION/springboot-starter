@@ -4,7 +4,6 @@ import com.petapp.starter.dto.UserCreateRequest;
 import com.petapp.starter.dto.UserCreateResponse;
 import com.petapp.starter.entity.UserEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 /**
