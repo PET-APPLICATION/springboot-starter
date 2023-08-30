@@ -10,7 +10,7 @@ services:
     ports:
       - "${MYSQL_PORT}:3306"
     env_file:
-      - ../.env
+      - ./.env
   starter:
     image: petapparg/spring-boot-starter
     depends_on:
