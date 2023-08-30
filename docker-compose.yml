@@ -12,5 +12,7 @@ services:
       - ./.env
   starter:
     image: petapparg/spring-boot-starter
+    ports:
+      - "8080:8080"
     depends_on:
       - mysql
