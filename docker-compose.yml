@@ -12,6 +12,6 @@ services:
     env_file:
       - ../.env
   starter:
-    image: PET-APP/spring-boot-starter
+    image: petapparg/spring-boot-starter
     depends_on:
       - mysql
