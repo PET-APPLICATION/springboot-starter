@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  ### MySQL Container
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${MYSQL_PORT}:3306"
+  starter:
+    image: PET-APP/spring-boot-starter
+    depends_on:
+      - mysql
